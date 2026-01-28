@@ -1,0 +1,289 @@
+/* ================================
+   PROFESSIONAL DONORS STYLES
+   ================================ */
+
+.donors-page.professional {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+}
+
+.page-header-pro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-border);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+}
+
+.page-header-pro h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.page-header-pro p {
+    color: var(--color-gray-400);
+    font-size: 1.125rem;
+}
+
+/* Filters Panel */
+.filters-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter-main {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-input-wrapper .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gray-400);
+    pointer-events: none;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.8rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-gray-100);
+    transition: all 0.2s;
+}
+
+.search-input-wrapper input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.filter-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--color-border);
+    display: none;
+    /* Hidden on mobile */
+}
+
+@media (min-width: 768px) {
+    .filter-divider {
+        display: block;
+    }
+}
+
+.blood-filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 2;
+    overflow: hidden;
+}
+
+.filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.blood-chips-scroll {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.chip {
+    padding: 0.4rem 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-gray-100);
+}
+
+.chip.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Checkbox Filter */
+.checkbox-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    transition: background-color 0.15s ease;
+}
+
+.checkbox-filter:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.checkbox-filter input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-filter .checkbox-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-gray-500);
+    border-radius: 3px;
+    background-color: transparent;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-filter .checkbox-box svg {
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.15s ease;
+    color: var(--color-primary);
+}
+
+.checkbox-filter input:checked+.checkbox-box {
+    border-color: var(--color-primary);
+}
+
+.checkbox-filter input:checked+.checkbox-box svg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox-filter:focus-within .checkbox-box {
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.3);
+}
+
+.checkbox-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-200);
+    line-height: 1;
+}
+
+.btn-clear {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--color-gray-400);
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.btn-clear:hover {
+    color: var(--color-primary);
+}
+
+/* Results */
+.results-meta {
+    margin-bottom: 1.5rem;
+    color: var(--color-gray-400);
+    font-size: 0.875rem;
+}
+
+.donors-grid-pro {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skeleton-card-pro {
+    height: 180px;
+    background: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    animation: pulse-bg 1.5s infinite;
+}
+
+@keyframes pulse-bg {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.empty-state-pro {
+    text-align: center;
+    padding: 4rem;
+    color: var(--color-gray-400);
+}
+
+.empty-state-pro .icon-circle {
+    width: 64px;
+    height: 64px;
+    background: var(--color-card);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .filter-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

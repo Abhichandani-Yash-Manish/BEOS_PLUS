@@ -1,0 +1,85 @@
+/* ================================
+   PROFESSIONAL NOT FOUND CSS
+   ================================ */
+
+.not-found-page.professional {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.not-found-content-pro {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.error-code-pro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--color-border);
+    line-height: 1;
+    margin-bottom: 2rem;
+    font-family: monospace;
+}
+
+.icon-wrapper {
+    color: var(--color-primary);
+    filter: drop-shadow(0 0 20px rgba(225, 29, 72, 0.3));
+}
+
+.not-found-content-pro h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+}
+
+.not-found-content-pro p {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .error-code-pro {
+        font-size: 5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
