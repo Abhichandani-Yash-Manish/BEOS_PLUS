@@ -18,15 +18,15 @@
     },
     {
       "src": "/assets/(.*)",
-      "dest": "/frontend/assets/$1"
+      "dest": "/assets/$1"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/frontend/favicon.ico"
+      "src": "/favicon.svg",
+      "dest": "/favicon.svg"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "dest": "/index.html"
     }
   ]
 }
