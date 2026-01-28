@@ -1,11 +1,9 @@
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-supabase==2.3.0
-python-dotenv==1.0.1
-pydantic==2.6.0
-email-validator==2.1.0
-pytest==8.0.0
-# httpx constraint removed to allow supabase to choose compatible version (requires <0.25.0)
-python-multipart==0.0.7
-jose==1.0.0
-passlib[bcrypt]==1.7.4
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+supabase>=2.3.0
+python-dotenv>=1.0.1
+pydantic>=2.6.0
+email-validator>=2.1.0
+# Removed explicit jose/passlib as we use Supabase Auth client logic
+# python-multipart is only needed if we use Form data, keeping it safe but relaxed
+python-multipart>=0.0.7
