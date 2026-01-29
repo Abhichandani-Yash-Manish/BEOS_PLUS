@@ -11,6 +11,7 @@ import './index.css';
 
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import DashboardLayout from './components/layout/DashboardLayout';
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -52,7 +53,9 @@ function App() {
 
                                             <Route path="/donors" element={
                                                 <ProtectedRoute roles={['admin']}>
-                                                    <Donors />
+                                                    <DashboardLayout role="admin">
+                                                        <Donors />
+                                                    </DashboardLayout>
                                                 </ProtectedRoute>
                                             } />
                                             <Route path="/hospitals" element={<Hospitals />} />
@@ -60,11 +63,41 @@ function App() {
                                             <Route path="/emergency" element={<Emergency />} />
                                             <Route path="/map" element={<EmergencyMap />} />
 
-                                            <Route path="/donor-dashboard" element={<ProtectedRoute roles={['user', 'donor']}><DonorDashboard /></ProtectedRoute>} />
-                                            <Route path="/hospital-dashboard" element={<ProtectedRoute roles={['hospital']}><HospitalDashboard /></ProtectedRoute>} />
-                                            <Route path="/blood-bank-dashboard" element={<ProtectedRoute roles={['blood_bank']}><BloodBankDashboard /></ProtectedRoute>} />
-                                            <Route path="/admin-dashboard" element={<ProtectedRoute roles={['admin']}><AdminDashboard /></ProtectedRoute>} />
-                                            <Route path="/admin/donors" element={<ProtectedRoute roles={['admin']}><AdminDonors /></ProtectedRoute>} />
+                                            <Route path="/donor-dashboard" element={
+                                                <ProtectedRoute roles={['user', 'donor']}>
+                                                    <DashboardLayout role="donor">
+                                                        <DonorDashboard />
+                                                    </DashboardLayout>
+                                                </ProtectedRoute>
+                                            } />
+                                            <Route path="/hospital-dashboard" element={
+                                                <ProtectedRoute roles={['hospital']}>
+                                                    <DashboardLayout role="hospital">
+                                                        <HospitalDashboard />
+                                                    </DashboardLayout>
+                                                </ProtectedRoute>
+                                            } />
+                                            <Route path="/blood-bank-dashboard" element={
+                                                <ProtectedRoute roles={['blood_bank']}>
+                                                    <DashboardLayout role="blood_bank">
+                                                        <BloodBankDashboard />
+                                                    </DashboardLayout>
+                                                </ProtectedRoute>
+                                            } />
+                                            <Route path="/admin-dashboard" element={
+                                                <ProtectedRoute roles={['admin']}>
+                                                    <DashboardLayout role="admin">
+                                                        <AdminDashboard />
+                                                    </DashboardLayout>
+                                                </ProtectedRoute>
+                                            } />
+                                            <Route path="/admin/donors" element={
+                                                <ProtectedRoute roles={['admin']}>
+                                                    <DashboardLayout role="admin">
+                                                        <AdminDonors />
+                                                    </DashboardLayout>
+                                                </ProtectedRoute>
+                                            } />
                                             <Route path="*" element={<NotFound />} />
                                         </Routes>
                                     </AnimatePresence>
